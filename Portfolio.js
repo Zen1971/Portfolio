@@ -1,6 +1,4 @@
 // Le système du mode sombre
-//
-
 // fonctions d'assistance pour basculer en mode sombre
 function enableDarkMode() {
 	document.body.classList.add('dark-mode');
