@@ -1,135 +1,113 @@
 * {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
 }
-:root {
-    --colors-white: #EEEEEE;
-    --colors-black: #333333;
-    --colors-primary: var(--colors-black);
-    --colors-secondary: var(--colors-white);
-    --font-size-base: 1.2rem;
-    --font-weight-normal: 400;
-    --font-weight-bold: 700;
-    --border-radius-full: 9999px;
-  }
-  
-  [data-theme-preference="dark"] {
-    --colors-primary: var(--colors-white);
-    --colors-secondary: var(--colors-black);
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
+body.dark-mode .targetElement {
+    background: #000000;
+}
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    :root {
+      --dark: #121212;
+      --medium: #282828;
+      --accent: #404040;
+      --bodyTextColorWhite: #fafbfc;
+    }
+    body.dark-mode {
+      background-color: var(--dark);
+    }
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6,
+    body.dark-mode .cs-title,
+    body.dark-mode .cs-text,
+    body.dark-mode .cs-li {
+      color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode .light {
+      display: none;
+    }
+    body.dark-mode .dark {
+      display: block !important;
+    }
+    .dark {
+    /* Classe utilisée pour masquer les éléments qui ne doivent être vus que lorsque le mode sombre est activé */
+      display: none;
     }
   }
-  
-  
-  .theme-switcher {
-    --theme-switcher-radius: 40px;
-    --theme-switcher-border: var(--colors-black);
-    --theme-switcher-border-size: 3px;
-    --theme-switcher-background: var(--colors-black);
-    --theme-switcher-icon-size: 24px;
-    --theme-switcher-icon-color: var(--colors-white);
-    --theme-switcher-icon-background: #777777;
-  
-    display: inline-grid;
-    justify-content: start;
-    width: calc(var(--theme-switcher-icon-size) * 2 + var(--theme-switcher-border-size) * 2);
-    padding: var(--theme-switcher-border-size);
-    border: 0;
-    border-radius: var(--theme-switcher-radius);
-    background-color: var(--theme-switcher-background);
-    line-height: 0;
-    cursor: pointer;
-    outline-offset: 0.5em;
-    outline-color: currentColor;
-  
-    & * {
+  /*-- -------------------------- -->
+  <---  Basculer le mode sombre   -->
+  <--- -------------------------- -*/
+  /* Mobile */
+  @media only screen and (min-width: 0rem) {
+    body.dark-mode #dark-mode-toggle .cs-sun {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    body.dark-mode #dark-mode-toggle .cs-moon {
+      transform: translate(-50%, -150%);
+      opacity: 0;
+    }
+    #dark-mode-toggle {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 3.75rem;
+      width: 3rem;
+      height: 3rem;
+      background: transparent;
+      border: none;
+      overflow: hidden;
+      padding: 0;
+    }
+    #dark-mode-toggle img,
+    #dark-mode-toggle svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.5625rem;
+      height: 1.5625rem;
       pointer-events: none;
     }
-  
-    & > .theme-icon {
-      padding: var(--theme-switcher-border-size);
-      border-radius: var(--border-radius-full);
-      transition: 0.3s translate;
-      color: var(--theme-switcher-icon-color);
-      background-color: var(--theme-switcher-icon-background);
+    #dark-mode-toggle .cs-moon {
+      z-index: 2;
+      transition: transform 0.3s,
+                  opacity 0.3s,
+                  fill 0.3s;
+      fill: #000;
     }
-  
-    & [class^="theme-icon-"] {
-      width: var(--theme-switcher-icon-size);
-      height: var(--theme-switcher-icon-size);
-    }
-  
-    &[aria-pressed="true"] {
-      --theme-switcher-border: #777777;
-      --theme-switcher-background: #777777;
-      --theme-switcher-icon-background: var(--colors-black);
-  
-      & .theme-icon-light {
-        display: none;
-      }
-  
-      & > .theme-icon {
-        translate: calc(var(--theme-switcher-icon-size) - (var(--theme-switcher-border-size) * 2));
-      }
-    }
-  
-    &[aria-pressed="false"] {
-      & .theme-icon-dark {
-        display: none;
-      }
+    #dark-mode-toggle .cs-sun {
+      z-index: 1;
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s,
+                  opacity 0.3s;
     }
   }
-  
-  html {
-    color: var(--colors-primary);
-    background-color: var(--colors-secondary);
-    font-family: system-ui, sans-serif;
-  }
-  
-  body {
-    display: grid;
-    min-height: 100dvh;
-    place-content: start center;
-    justify-items: center;
-    margin: 0;
-    font-size: var(--font-size-base);
-  }
-  
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    border: 0;
-  }
-  
-  a {
-    color: inherit;
-  }
-  
-  code {
-    font-size: inherit;
-  }
-  
-  main {
-    padding: 4rem;
-    margin-inline: auto;
-    max-width: 800px;
-  }
-  
-  
-  @media (width >= 40rem) {
-    main {
-      max-width: 1000px;
+   @media only screen and (min-width: 64rem) {
+    #dark-mode-toggle {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      margin-left: 1.875rem;
+      margin-bottom: 0rem;
     }
+    #dark-mode-toggle .cs-moon {
+   /* remplacez ce dont vous avez besoin */
+       fill:black;
+    }
+  }
+  body.dark-mode #updates {
+    background: #000000;
 }

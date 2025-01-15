@@ -1,45 +1,41 @@
-// Encapsulation du code dans une fonction immédiatement invoquée
-(function() {
-    // Déclaration des variables
-    const themeSwitcher = {
-      button: document.querySelector('.js-theme-switcher'),
-      prefersDark: window.matchMedia('(prefers-color-scheme: dark)'),
-      currentTheme: null
-    };
-  
-    // Initialisation du thème
-    function initTheme() {
-      if (localStorage.getItem('theme-preference')) {
-        themeSwitcher.currentTheme = localStorage.getItem('theme-preference');
-      } else if (themeSwitcher.prefersDark.matches) {
-        themeSwitcher.currentTheme = 'dark';
-      } else {
-        themeSwitcher.currentTheme = 'light';
-      }
-      setTheme(themeSwitcher.currentTheme);
-    }
-  
-    // Gestion du clic sur le bouton
-    themeSwitcher.button.addEventListener('click', function() {
-      themeSwitcher.currentTheme = document.documentElement.getAttribute('data-theme-preference') === "dark" ? "light" : "dark";
-      setTheme(themeSwitcher.currentTheme);
-    });
-  
-    // Gestion du changement de préférence système
-    themeSwitcher.prefersDark.addEventListener('change', function(event) {
-      themeSwitcher.currentTheme = event.matches ? 'dark' : 'light';
-      setTheme(themeSwitcher.currentTheme);
-    });
-  
-    // Fonction pour définir le thème
-    function setTheme(theme) {
-      const pressed = theme === 'dark' ? 'true' : 'false';
-      document.documentElement.setAttribute('data-theme-preference', theme);
-      localStorage.setItem('theme-preference', theme);
-      themeSwitcher.button.setAttribute('aria-pressed', pressed);
-    }
-  
-    // Initialisation
-    initTheme();
-  })();
-  
+// Le système du mode sombre
+//
+
+// fonctions d'assistance pour basculer en mode sombre
+function enableDarkMode() {
+	document.body.classList.add('dark-mode');
+	localStorage.setItem('theme', 'dark');
+}
+function disableDarkMode() {
+	document.body.classList.remove('dark-mode');
+	localStorage.setItem('theme', 'light');
+}
+
+// détermine les préférences du mode sombre des nouveaux utilisateurs
+function detectColorScheme() {
+	
+    // par défaut le thème clair
+	let theme = 'light';
+
+	
+    // vérifie localStorage pour une variable 'thème' enregistrée. s'il est là, l'utilisateur a déjà visité, alors appliquez les choix de thème nécessaires
+	if (localStorage.getItem('theme')) {
+		theme = localStorage.getItem('theme');
+	}
+	// si ce n'est pas le cas, vérifiez si l'utilisateur a lui-même appliqué les préférences du mode sombre dans le navigateur
+	else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		theme = 'dark';
+	}
+
+    // si aucune préférence n'est définie, la valeur par défaut light sera utilisée. postuler en conséquence
+	theme === 'dark' ? enableDarkMode() : disableDarkMode();
+}
+
+// s'exécute au chargement de la page
+detectColorScheme();
+
+// ajoute un écouteur d'événement au bouton bascule du mode sombre
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+	// au clic, vérifiez localStorage pour la valeur du mode sombre, utilisez pour appliquer le contraire de ce qui est enregistré
+	localStorage.getItem('theme') === 'light' ? enableDarkMode() : disableDarkMode();
+});
