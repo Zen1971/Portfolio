@@ -3,66 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="portfolio.css">
     <title>Mon Portfolio</title>
 </head>
 <body>
-  <header>
-    <div class="bouton-menu">
-      <a href="#nav" style="padding: 10px;color: black; border-radius: 50%; text-decoration: none;">
-      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22" width="22" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-      </svg>
-      </a>
-    </div>
-      <div class="drapeau français">
-       <img src="images/fr.png"class="h-5" alt="Drapeau français">Français
-      <button id="dark-mode-toggle">
-        <!--Moon est un SVG en ligne, vous pouvez donc modifier la couleur si nécessaire-->
-        <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/sun.svg" decoding="async" alt="sun" width="15" height="15">
-        <path class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve">
-          <path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></path></svg>
-      </button>
-      </div>
-  </header>
-<nav>
-<!-- Lien pour "Home" -->
-<a href="#home" style="padding: 10px;color: black; border-radius: 50%; text-decoration: none;">
-    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M19 8.71l-5.333 -4.148a2.666 2.666 0 0 0 -3.274 0l-5.334 4.148a2.665 2.665 0 0 0 -1.029 2.105v7.2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.2c0 -.823 -.38 -1.6 -1.03 -2.105"></path>
-        <path d="M16 15c-2.21 1.333 -5.792 1.333 -8 0"></path>
-            </svg>
-          </a>
-<!-- Lien pour "À propos" -->
-<a href="#à-propos" style="padding: 10px; color: black; border-radius: 50%; text-decoration: none;">
-    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="16" x2="12" y2="16.01"></line>
-      <path d="M12 12v-4"></path>
-    </svg>
-  </a>
- <!-- Lien pour "Projets" -->
-  <a href="#projets" style="padding: 10px;color: black; border-radius: 50%; text-decoration: none;">
-    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 7h5l2 3h11v11h-18z"></path>
-      <path d="M3 7v13h18"></path>
-    </svg>
-  </a>
-<!-- Lien pour "Expériences" -->
-  <a href="#expériences" style="padding: 10px;color: black; border-radius: 50%; text-decoration: none;">
-    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-      <path d="M16 7v-2a2 2 0 0 0 -2 -2h-4a2 2 0 0 0 -2 2v2"></path>
-    </svg>
-  </a>
-<!-- Lien pour "Contacts" -->
-  <a href="#contacts" style="padding: 10px;color: black; border-radius: 50%; text-decoration: none;">
-    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-18a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2"></path>
-    </svg>
-  </a>
-</nav>
+<label>
+  <input type="checkbox">
+  <div class="toogle">
+    <span class="top_line common"></span>
+    <span class="middle_line common"></span>
+    <span class="bottom_line common"></span>
+  </div>
+  <div class="slide">
+    <h1>MENU</h1>
+    <ul> 
+      <li><a href="#à-propos" style="padding: 10px; border-radius: 50%; text-decoration: none;">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="16.01"></line>
+          <path d="M12 12v-4"></path>
+        </svg> A-propos
+      </a></li>
+      <li><a href="#projets" style="padding: 10px; border-radius: 50%; text-decoration: none;">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7h5l2 3h11v11h-18z"></path>
+          <path d="M3 7v13h18"></path>
+        </svg> Projets
+      </a></li>
+      <li><a href="#expériences" style="padding: 10px; border-radius: 50%; text-decoration: none;">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 7v-2a2 2 0 0 0 -2 -2h-4a2 2 0 0 0 -2 2v2"></path>
+        </svg> Expériences
+      </a></li>
+      <li><a href="#technologies" style="padding: 10px; border-radius: 50%; text-decoration: none;">
+        <svg class="svg-snoweb svg-theme-light" height="14" preserveaspectratio="xMidYMid meet"viewbox="0 0 24 24"width="15" x="2" xmlns="http://www.w3.org/2000/svg" y="7">
+          <path class="svg-stroke-primary" d="M40.3,70.8H59.7M50,12.6v4.1m26.5,6.8-3,3M87.4,50H83.3M16.7,50H12.6M26.5,26.5l-3-3M35.3,64.7a20.8,20.8,0,1,1,29.4,0L62.4,67a14.1,14.1,0,0,0-4.1,9.9v2.2a8.3,8.3,0,0,1-16.6,0V76.9A14.1,14.1,0,0,0,37.6,67Z"fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+          </path>
+        </svg> Technologies 
+      </a></li>
+      <li><a href="#contacts" style="padding: 10px; border-radius: 50%; text-decoration: none;">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-18a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2"></path>
+        </svg> Me contacter
+      </a></li>
+    </ul>
+  </div>
+</label>
 <script src="portfolio.js"></script>
 </body>
 </html>
