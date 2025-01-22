@@ -4,8 +4,8 @@
     --color-white: #fff;
     --color-text: black;
     --color-h1: #333;
-    --color-lien:  #96C2DB;
-}  
+    --color-lien:  rgb(145 94 255);
+}
 *{
     margin: 0;
     padding: 0;
@@ -14,9 +14,7 @@
     scroll-behavior: smooth;
 }
 body{
-    height: 100vh;
-    width: 100vw;
-    background-image: url("images/hero_setup.webp");
+    background-image: url("images/hero_setup.webp"); 
 }
 .slide{
 /* height: 100%; */
@@ -42,6 +40,7 @@ ul li a{
 color: var(--color-text);
 display: block;
 text-decoration: none;
+align-items: center;
 padding: 10px;
 transition: 0.2s ease-out;
 }
@@ -107,4 +106,32 @@ input:checked ~ .toogle .middle_line{
 }
 input:checked ~ .slide{
 transform: translateX(0);
+}
+.monpicht{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: var(--color-white);
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    border-radius: 9999px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(145 94 255 / var(--tw-bg-opacity));
+    padding: .75rem 1.5rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: var(--color-white);
+}
+.ml-2 {
+    margin-left: .5rem;
+}
+.profile-picture {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
 }
