@@ -16,7 +16,7 @@
 body{
     background-image: url("images/hero_setup.webp"); 
 }
-.slide{
+header .slide{
 /* height: 100%; */
 width: 180px;
 position: absolute;
@@ -127,11 +127,26 @@ transform: translateX(0);
     --tw-text-opacity: 1;
     color: var(--color-white);
 }
-.ml-2 {
-    margin-left: .5rem;
+.ml-2{
+    margin-left: .5rem; 
 }
 .profile-picture {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 35%;
+    right: 450px; 
 }
+.linkedin a{
+    position: absolute;
+    top: 40%;
+    right: 667px;
+    text-decoration: none;
+    font-weight: 700;
+}
+.github a{
+    position: absolute;
+    top: 45%;
+    right: 662px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
